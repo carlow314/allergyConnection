@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
+var path = require("path");
 // Sets up the Express App
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -21,7 +22,7 @@ app.use(bodyParser.json({
 }));
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static("public/"));
 // Set Handlebars
 app.engine("handlebars", exphbs({
   defaultLayout: "main"

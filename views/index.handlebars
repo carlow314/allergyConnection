@@ -1,27 +1,35 @@
-<div class="row">
-  <div class="container">
-    <div class="col-lg-4 col-lg-offset-4">
-       <!--app title-->
-      <h1 id="mainTitle" class="text-center"> Allergies!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>User Comment Example</h3>
     </div>
-    <!--element that will house all of the posts-->
-    <div class="col-lg-12">
-           <div class="col-lg-6" id="undevouredBurgers">
-        {{#each posts}}
-        <div class="well well-lg text-center"><b>{{this.name}}</b>
-        <br>
-        <b>{{this.body}}</b>
-        <br>
-        <b>{{this.location}}</b>
+    <!-- /col-sm-12 -->
+  </div>
+  <!-- /row -->
+    <!-- /col-sm-1 -->
+
+    <div class="col-sm-5">
+      {{#each posts}}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>{{this.name}}</strong> <span class="text-muted" id="location">{{this.location}}</span>
         </div>
-        {{/each}}
+        <div class="panel-body">
+          {{this.body}}
+        </div>
+        <!-- /panel-body -->
       </div>
+      {{/each}}
+      <!-- /panel panel-default -->
+    </div>
+    <!-- /col-sm-5 -->
+
     <div class="col-lg-4 col-lg-offset-4">
       <!-- this button will add a new burger to the database and the DOM.-->
       <form action="/?_method=POST" method="POST">
-        <h4 class="text-center">Burger Name: </h4>
+        <h4 class="text-center">Name: </h4>
         <input class="center-block" type="text" name="name">
-        <h4 class="text-center">Body: </h4>
+        <h4 class="text-center">Comment: </h4>
         <input class="center-block" type="text" row="10" name="body">
         <h4 class="text-center">Location: </h4>
         <input class="center-block" type="text" name="location">
@@ -31,26 +39,29 @@
     </div>
   </div>
 </div>
+{{!--
 <script type="text/javascript">
-var token = '3123472.50236f8.190b47e55dde43b0ac37619fdaaf27f7',
-    hashtag='allergies', // hashtag without # symbol
+  AIzaSyDOU6V8Vtr1G4y5HdJ5XNOe82rtz8Tpb - 4
+  var token = '3123472.50236f8.190b47e55dde43b0ac37619fdaaf27f7',
+    hashtag = 'allergies', // hashtag without # symbol
     num_photos = 4;
- 
-$.ajax({
-	url: 'https://api.instagram.com/v1/tags/' + hashtag + '/media/recent',
-	dataType: 'jsonp',
-	type: 'GET',
-	data: {access_token: token, count: num_photos},
-	success: function(data){
-		console.log(data);
-		for(x in data.data){
-			$('ul').append('<li><img src="'+data.data[x].images.standard_resolution.url+'"></li>');  
-		}
-	},
-	error: function(data){
-		console.log(data);
-	}
-});
-</script>
-  </div>
+
+  $.ajax({
+    url: 'https://api.instagram.com/v1/tags/' + hashtag + '/media/recent',
+    dataType: 'jsonp',
+    type: 'GET',
+    data: { access_token: token, count: num_photos },
+    success: function (data) {
+      console.log(data);
+      for (x in data.data) {
+        $('ul').append('<li><img src="' + data.data[x].images.standard_resolution.url + '"></li>');
+      }
+    },
+    error: function (data) {
+      console.log(data);
+    }
+  });
+
+</script> --}}
+</div>
 </div>

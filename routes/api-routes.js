@@ -12,10 +12,10 @@ module.exports = (app) => {
             });
     });
     // // Get route for returning posts of a specific location
-    // app.get("/api/posts/category/:location", (req, res) => {
+    // app.get("/api/posts/location/:location", (req, res) => {
     //     db.Post.findAll({
     //             where: {
-    //                 category: req.params.location
+    //                 location: req.params.location
     //             }
     //         })
     //         .then((dbPost) => {
