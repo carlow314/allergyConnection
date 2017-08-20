@@ -1,0 +1,30 @@
+{
+  "name": "allergyconnection",
+  "version": "0.0.0",
+  "description": "A Fullstack application that will give you local air quality and pollen levels, as well as user experience as well.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlow314/allergyConnection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlow314/allergyConnection/issues"
+  },
+  "homepage": "https://github.com/carlow314/allergyConnection#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "instafeed.js": "^1.4.1",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.1",
+    "sequelize": "^4.6.0"
+  }
+}
