@@ -25,6 +25,7 @@
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.1",
-    "sequelize": "^4.6.0"
+    "sequelize": "^4.6.0",
+    "vue": "^2.4.2"
   }
 }

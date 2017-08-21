@@ -6,62 +6,44 @@
     <!-- /col-sm-12 -->
   </div>
   <!-- /row -->
-    <!-- /col-sm-1 -->
+  <!-- /col-sm-1 -->
 
-    <div class="col-sm-5">
-      {{#each posts}}
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <strong>{{this.name}}</strong> <span class="text-muted" id="location">{{this.location}}</span>
-        </div>
-        <div class="panel-body">
-          {{this.body}}
-        </div>
-        <!-- /panel-body -->
+  <div class="col-sm-5">
+    {{#each posts}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>User:{{this.name}}</strong> <span class="text-muted" id="location">City:{{this.location}}</span>
       </div>
-      {{/each}}
-      <!-- /panel panel-default -->
+      <div class="panel-body">
+        {{this.body}}
+      </div>
+      <!-- /panel-body -->
     </div>
-    <!-- /col-sm-5 -->
-
-    <div class="col-lg-4 col-lg-offset-4">
-      <!-- this button will add a new burger to the database and the DOM.-->
-      <form action="/?_method=POST" method="POST">
-        <h4 class="text-center">Name: </h4>
-        <input class="center-block" type="text" name="name">
-        <h4 class="text-center">Comment: </h4>
-        <input class="center-block" type="text" row="10" name="body">
-        <h4 class="text-center">Location: </h4>
-        <input class="center-block" type="text" name="location">
-        <br>
-        <button class="center-block" type="submit">Submit</button>
-      </form>
-    </div>
+    {{/each}}
+    <!-- /panel panel-default -->
   </div>
+  <!-- /col-sm-5 -->
+
+  <div class="col-lg-4 col-lg-offset-4">
+    <!-- this button will add a new burger to the database and the DOM.-->
+    <form action="/?_method=POST" method="POST">
+      <h4 class="text-center">Name: </h4>
+      <input class="center-block" type="text" name="name">
+      <h4 class="text-center">Comment: </h4>
+      <input class="center-block" type="text" row="10" name="body">
+      <h4 class="text-center">Location: </h4>
+      <input class="center-block" type="text" name="location">
+      <br>
+      <button class="center-block" type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="col-lg-4 col-lg-offset-4">
+   {{#each pharmacies}}
+  <ul class="people_list">
+    <li>{{this.name}}</li>
+</ul>
+{{/each}}
 </div>
-{{!--
-<script type="text/javascript">
-  AIzaSyDOU6V8Vtr1G4y5HdJ5XNOe82rtz8Tpb - 4
-  var token = '3123472.50236f8.190b47e55dde43b0ac37619fdaaf27f7',
-    hashtag = 'allergies', // hashtag without # symbol
-    num_photos = 4;
-
-  $.ajax({
-    url: 'https://api.instagram.com/v1/tags/' + hashtag + '/media/recent',
-    dataType: 'jsonp',
-    type: 'GET',
-    data: { access_token: token, count: num_photos },
-    success: function (data) {
-      console.log(data);
-      for (x in data.data) {
-        $('ul').append('<li><img src="' + data.data[x].images.standard_resolution.url + '"></li>');
-      }
-    },
-    error: function (data) {
-      console.log(data);
-    }
-  });
-
-</script> --}}
+</div>
 </div>
 </div>
