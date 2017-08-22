@@ -42,8 +42,9 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Routes
-var authROute =require("./routes/auth.js")(app);
-
+var authRoute = require("./routes/auth.js")(app);
+//Passport strategies
+require('./config/passport/passport.js')(passport,db.user);
 app.use(methodOverride("_method"));
 
 // Syncing our sequelize models and then starting our Express app
