@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <form data-toggle="validator" role="form" name="signin" action="/signin" method="POST" id="signin">
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Email Address</label>
+            <input class="form-control" id="email" type="email" name="email" placeholder="Email Address" required data-validation-required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Password</label>
+            <input class="form-control" id="password" type="password" name="password" placeholder="Password" required data-validation-required-message="Please enter a valid password.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button type="submit" value="send" class="btn btn-success btn-lg">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
