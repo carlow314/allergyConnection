@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
 var path = require("path");
-var env = require('dotenv').load();
+var env = require("dotenv").load();
 // Sets up the Express App
 var app = express();
 var PORT = process.env.PORT || 8000;
@@ -25,7 +25,7 @@ app.use(bodyParser.json({
 }));
 // For Passport
 app.use(session({
-  secret: 'keyboard cat',
+  secret: "keyboard cat",
   resave: true,
   saveUninitialized: true
 }));
