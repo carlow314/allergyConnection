@@ -32,9 +32,8 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (user) {
-                    return done(null, false, {
-                        message: 'That email is already taken'
-                    });
+                    req.flash("error", "This email is already taken.");
+                    return done(null, false);
                 } else {
                     var userPassword = generateHash(password);
                     var data = {
@@ -55,8 +54,7 @@ module.exports = function (passport, user) {
             });
         }
     ));
-    passport.use('local-signin', new LocalStrategy(
-        {
+    passport.use('local-signin', new LocalStrategy({
             // by default, local strategy uses username and password, we will override with email
             usernameField: 'email',
             passwordField: 'password',

@@ -5,6 +5,8 @@ var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
 var path = require("path");
 var env = require("dotenv").load();
+var flash = require('connect-flash');
+cookieParser = require('cookie-parser');
 // Sets up the Express App
 var app = express();
 var PORT = process.env.PORT || 8000;
@@ -32,7 +34,11 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-
+app.use(flash())
+app.use(function (req, res, next) {
+  // res.locals.error = req.flash('error')
+  next()
+});
 // Static directory
 app.use(express.static("public/"));
 // Set Handlebars
@@ -44,7 +50,7 @@ app.set("view engine", "handlebars");
 // Routes
 var authRoute = require("./routes/auth.js")(app);
 //Passport strategies
-require('./config/passport/passport.js')(passport,db.user);
+require('./config/passport/passport.js')(passport, db.user);
 app.use(methodOverride("_method"));
 
 // Syncing our sequelize models and then starting our Express app

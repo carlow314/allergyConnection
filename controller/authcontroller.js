@@ -1,6 +1,8 @@
 var exports = module.exports = {}
 exports.signup = function (req, res) {
-    res.render('signup');
+    var error = req.flash("error");
+    console.log(error);
+    res.render('signup', {error: error});
 };
 
 exports.signin = function (req, res) {

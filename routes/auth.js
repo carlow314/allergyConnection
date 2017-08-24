@@ -9,7 +9,8 @@ module.exports = function (app) {
     app.get('/logout', authController.logout);
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/dashboard',
-        failureRedirect: '/'
+        failureRedirect: '/',
+        failureFlash:true
     }));
 
     function isLoggedIn(req, res, next) {
@@ -19,7 +20,8 @@ module.exports = function (app) {
     }
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
-        failureRedirect: '/signin'
+        failureRedirect: '/signin',
+        failureFlash:true
     }));
 
     //dog facts API
@@ -40,6 +42,7 @@ module.exports = function (app) {
         }
     });
 
+    //random puppy image
     const RandomPuppy = require('random-puppy');
     RandomPuppy()
         .then(url => {
