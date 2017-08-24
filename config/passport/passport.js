@@ -32,7 +32,7 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (user) {
-                    req.flash("error", "This email is already taken.");
+                    req.flash("error", "This email is already taken!");
                     return done(null, false);
                 } else {
                     var userPassword = generateHash(password);
@@ -71,8 +71,9 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (!user) {
+                    req.flash("wrongEmail", "This email is already taken!");
                     return done(null, false, {
-                        message: 'Email does not exist'
+            
                     });
                 }
                 if (!isValidPassword(user.password, password)) {
