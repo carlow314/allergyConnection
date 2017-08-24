@@ -32,13 +32,13 @@ module.exports = function (app) {
             var facts = JSON.parse(body);
             dogfacts.push(facts);
         }
-        console.log(dogfacts);
+        //console.log(dogfacts);
     });
 
     //random dog image
     request("https://dog.ceo/api/breeds/image/random", (err, res, body) => {
         if (!err && res.statusCode === 200) {
-            console.log("Cute ass dog!: " + (body));
+            //console.log("Cute ass dog!: " + (body));
         }
     });
 
@@ -46,6 +46,6 @@ module.exports = function (app) {
     const RandomPuppy = require('random-puppy');
     RandomPuppy()
         .then(url => {
-            console.log(url);
+           // console.log(url);
         })
 }
