@@ -7,9 +7,9 @@ var path = require("path");
 var env = require("dotenv").load();
 var flash = require('connect-flash');
 cookieParser = require('cookie-parser');
-// Sets up the Express App
-var app = express();
+// Sets up the Express App;
 var PORT = process.env.PORT || 8000;
+var app = express()
 var passport = require('passport');
 var session = require('express-session');
 
