@@ -3,7 +3,8 @@ $border-right-color: #ddd;
     >.panel-heading{
       &:before{
       	border-right-color:$border-right-color;
-       	border-width:8px
+       	border-width:8px;
+        height: auto;
     };
   }
 }

@@ -1,3 +1,4 @@
 .panel > .panel-heading:before {
-  border-right-color: #ddgd;
-  border-width: 8px; }
+  border-right-color: #ddd;
+  border-width: 8px;
+  height: auto; }
