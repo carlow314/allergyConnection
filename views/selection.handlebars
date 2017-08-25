@@ -11,11 +11,16 @@
     </div>
   </div>
 </div>
-     <div id="dogbutton">
-        <form action="/dashboard">
-          <div class="form-group">
-            <button type="submit" value="send" class="btn btn-danger">Dogs</button
-<div id="catbutton">
-        <form action="/dashboard">
-          <div class="form-group">
-            <button type="submit" value="send" class="btn btn-danger">Cats</button
+<div id="dogButton">
+  {{!-- <form action="/dashboard">
+    <div class="form-group"> --}}
+      <button value="Count" class="btn btn-danger">Dogs</button>
+    </div>
+</div>
+<p>The button was pressed <span id="counter">0</span> times.</p>
+<div id="catButton">
+  <form action="/dashboard">
+    <div class="form-group">
+      <button type="submit" value="Count" class="btn btn-danger">Cats</button>
+    </div>
+    <p>The button was pressed <span id="displayCount">0</span> times.</p>

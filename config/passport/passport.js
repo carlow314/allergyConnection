@@ -1,4 +1,4 @@
-var bCrypt = require('bcrypt');
+var bCrypt = require('bcrypt-nodejs');
 module.exports = function (passport, user) {
     var User = user;
     var LocalStrategy = require('passport-local').Strategy;
@@ -32,7 +32,7 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (user) {
-                    req.flash("error", "This email is already taken!");
+                    req.flash("error", "Signup error: This email is already taken!");
                     return done(null, false);
                 } else {
                     var userPassword = generateHash(password);
@@ -71,22 +71,22 @@ module.exports = function (passport, user) {
                 }
             }).then(function (user) {
                 if (!user) {
-                    req.flash("wrongEmail", "This email is already taken!");
+                    req.flash("error", "Sign-in error: Please enter a valid email!");
                     return done(null, false, {
             
                     });
                 }
                 if (!isValidPassword(user.password, password)) {
+                    req.flash("error", "Sign in error: Please enter a valid password!");
                     return done(null, false, {
-                        message: 'Incorrect password.'
                     });
                 }
                 var userinfo = user.get();
                 return done(null, userinfo);
             }).catch(function (err) {
                 console.log("Error:", err);
+                req.flash("error",'Sign in error: Something went wrong with your Signin!')
                 return done(null, false, {
-                    message: 'Something went wrong with your Signin'
                 });
             });
         }

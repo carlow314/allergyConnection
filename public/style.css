@@ -1,5 +1,3 @@
-.form-control::-webkit-input-placeholder { color: red; }  /* WebKit, Blink, Edge */
-.form-control:-moz-placeholder { color: red; }  /* Mozilla Firefox 4 to 18 */
-.form-control::-moz-placeholder { color: red; }  /* Mozilla Firefox 19+ */
-.form-control:-ms-input-placeholder { color: red; }  /* Internet Explorer 10-11 */
-.form-control::-ms-input-placeholder { color: red; } 
+.error{
+    color:red;
+}

@@ -17,11 +17,11 @@ module.exports = function (app) {
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())
             return next();
-        res.redirect('/signin');
+        res.redirect('/');
     }
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/selection',
-        failureRedirect: '/signin',
+        failureRedirect: '/',
         failureFlash:true
     }));
 
