@@ -1,0 +1,9 @@
+$border-right-color: #ddd;
+.panel {
+    >.panel-heading{
+      &:before{
+      	border-right-color:$border-right-color;
+       	border-width:8px
+    };
+  }
+}
