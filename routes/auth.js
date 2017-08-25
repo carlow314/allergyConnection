@@ -5,10 +5,11 @@ var authController = require('../controller/authcontroller.js');
 module.exports = function (app) {
     app.get('/', authController.signup);
     app.get('/signin', authController.signin);
-    app.get('/dashboard', isLoggedIn, authController.dashboard);
+    app.get('/selection', isLoggedIn, authController.selection);
+    app.get('/dashboard', authController.dashboard);
     app.get('/logout', authController.logout);
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/dashboard',
+        successRedirect: '/selection',
         failureRedirect: '/',
         failureFlash:true
     }));
@@ -19,7 +20,7 @@ module.exports = function (app) {
         res.redirect('/signin');
     }
     app.post('/signin', passport.authenticate('local-signin', {
-        successRedirect: '/dashboard',
+        successRedirect: '/selection',
         failureRedirect: '/signin',
         failureFlash:true
     }));

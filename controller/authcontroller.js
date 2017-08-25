@@ -10,6 +10,10 @@ exports.signin = function (req, res) {
 
 }
 
+exports.selection = function (req, res) {
+    res.render('selection');
+}
+
 exports.dashboard = function (req, res) {
     res.render('dashboard');
 }
