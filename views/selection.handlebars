@@ -1,4 +1,4 @@
-{{!-- <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-lg-2 pull-right">
       <div id="logout_button">
@@ -13,7 +13,6 @@
   <div class="entry">
   {{users}}
     <p>Welcome {{Firstname}}! Are you a dog or cat person?</p>
-    {{data}}
 </div>
 <div id="dogButton">
   <form action="/dashboard">
@@ -29,13 +28,4 @@
     </div>
     <p>The button was pressed <span id="displayCount">0</span> times.</p>
 </div>
-</div> --}}
-
-<!--This is our template. -->
-<!--Data will be inserted in its according place, replacing the brackets.-->
-<script id="address-template" type="text/x-handlebars-template">
-  <p>You can find me in {{city}}. My address is {{number}} {{street}}.</p>
-</script>
-
-<!--Your new content will be displayed in here-->
-<div class="content-placeholder"></div>
+</div>
