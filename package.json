@@ -30,14 +30,12 @@
     "mysql": "^2.14.1",
     "mysql2": "^1.4.1",
     "sequelize": "^4.6.0",
-    "vue": "^2.4.2"
-    "node-gyp": "^3.6.2",
+    "vue": "^2.4.2",
     "nodejs": "0.0.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "random-puppy": "^1.1.0",
-    "require": "^2.4.20",
-    "sequelize": "^4.6.0"
+    "require": "^2.4.20"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
