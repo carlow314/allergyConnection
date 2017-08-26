@@ -1,2 +1,2 @@
-# allergyConnection
-A Fullstack application that will give you local air quality and pollen levels, as well as user experience as well.
+# FurBabies
+A Fullstack application that will gives you a dashboard of dog or cat images, facts and other information!

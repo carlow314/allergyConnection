@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp sass:watch & node server.js"
+    "start": "gulp sass:watch & node server.js",
+    "start":"NODE_ENV=development node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,15 +19,26 @@
   },
   "homepage": "https://github.com/carlow314/allergyConnection#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
-    "instafeed.js": "^1.4.1",
+    "express-session": "^1.15.5",
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.1",
     "sequelize": "^4.6.0",
     "vue": "^2.4.2"
+    "node-gyp": "^3.6.2",
+    "nodejs": "0.0.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "random-puppy": "^1.1.0",
+    "require": "^2.4.20",
+    "sequelize": "^4.6.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

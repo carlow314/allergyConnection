@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2 pull-right">
+      <div id="logout_button">
+        <form action="/logout">
+          <div class="form-group">
+            <button type="submit" value="send" class="btn btn-danger">Log Out</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="entry">
+  {{users}}
+    <p>Welcome {{Firstname}}! Are you a dog or cat person?</p>
+</div>
+<div id="dogButton">
+  <form action="/dashboard">
+    <div class="form-group">
+      <button value="Count" class="btn btn-danger">Dogs</button>
+    </div>
+</div>
+<p>The button was pressed <span id="counter">0</span> times.</p>
+<div id="catButton">
+  <form action="/dashboard">
+    <div class="form-group">
+      <button type="submit" value="Count" class="btn btn-danger">Cats</button>
+    </div>
+    <p>The button was pressed <span id="displayCount">0</span> times.</p>
+</div>
+</div>
