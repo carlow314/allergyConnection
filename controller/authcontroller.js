@@ -12,7 +12,7 @@ exports.signin = function (req, res) {
     var passwordError = req.flash("error");
     console.log(passwordError);
     console.log(emailError);
-    res.render('signin', {
+    res.render('signup', {
         error: error
     });
 
@@ -22,8 +22,12 @@ exports.selection = function (req, res) {
     res.render('selection');
 }
 
-exports.dashboard = function (req, res) {
-    res.render('dashboard');
+exports.dogdashboard = function (req, res) {
+    res.render('dogdashboard');
+}
+
+exports.catdashboard = function (req, res) {
+    res.render('catdashboard');
 }
 
 exports.logout = function (req, res) {
