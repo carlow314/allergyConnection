@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
+helpers = require('./helpers.js');
 var path = require("path");
 var env = require("dotenv").load();
 var flash = require('connect-flash');
@@ -44,8 +45,10 @@ app.use(express.static("public/"));
 // Set Handlebars
 app.engine("handlebars", exphbs({
   defaultLayout: "main",
+  helpers : helpers,
   partialsDir: __dirname + '/views/partials/'
 }));
+app.set("views", path.join(__dirname,"views"));
 app.set("view engine", "handlebars");
 
 // Routes

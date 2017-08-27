@@ -3,9 +3,11 @@ exports.signup = function (req, res) {
     var error = req.flash("error");
     console.log(error);
     res.render('signup', {
-        error: error
+        error: error,
+        title: "furbabies!",
     });
 };
+
 
 exports.signin = function (req, res) {
     var emailError = req.flash("error");
