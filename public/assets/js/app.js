@@ -9,25 +9,26 @@ $(document).ready(function () {
         catcount++;
         $("#catcounter").text(catcount);
     });
+  
+    $('.unmask').on('click', function () {
 
-    //function of click event to change input type from password to text and vice versa
-    $('.unmask').on('click', () => {
         if ($(this).prev('input').attr('type') == 'password')
             changeType($(this).prev('input'), 'text');
+
         else
             changeType($(this).prev('input'), 'password');
+
         return false;
     });
 
-    //function for converting hidden password to visible text and visible text to hidden password
     function changeType(x, type) {
         if (x.prop('type') == type)
-            return x;
+            return x; 
         try {
-            return x.prop('type', type);
+            return x.prop('type', type); 
         } catch (e) {
             var html = $("<div>").append(x.clone()).html();
-            var regex = /type=(\")?([^\"\s]+)(\")?/;
+            var regex = /type=(\")?([^\"\s]+)(\")?/; 
             var tmp = $(html.match(regex) == null ?
                 html.replace(">", ' type="' + type + '">') :
                 html.replace(regex, 'type="' + type + '"'));
@@ -43,9 +44,9 @@ $(document).ready(function () {
                 }
             }(events);
             x.replaceWith(tmp);
-            setTimeout(cb, 10);
-            n
+            setTimeout(cb, 10); 
             return tmp;
         }
     }
+
 });
