@@ -1,22 +1,72 @@
 <div class="container">
   <div class="entry">
-    {{users}}
-    <p>Welcome {{Firstname}}! Are you a dog or cat person?</p>
-  </div>
-  <div id="dogButton">
-    <form action="/dogdashboard">
-      <div class="form-group">
-        <button type="submit" value="send" class="btn btn-danger">Dogs</button>
+    <div class="row">
+      <div class="col-lg-4 mx-auto">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+   Profile Settings
+  </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+            <div class="col-lg-8 mx-auto">
+              <form data-toggle="validator" role="form" name="update" id="updateaccount" action="user/update/{{this.id}}?_method=PUT" method="POST">
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>First Name</label>
+                    <input class="form-control" id="firstName" type="text" name="Firstname" value="{{Firstname}}" placeholder="" data-validation-required-message="Please enter your first name."
+                      required>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label> Last Name</label>
+                    <input class="form-control" id="lastName" type="text" name="Lastname" value="{{Lastname}}" placeholder="" data-validation-required-message="Please enter your Last name."
+                      required>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Email Address</label>
+                    <input class="form-control" id="email" type="email" name="email" value="{{email}}" placeholder="" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Password</label>
+                    <input class="form-control" id="password" type="password" name="password" value="{{password}}" placeholder="" required data-validation-required-message="Please enter a valid password.">
+                    <button class="unmask" type="button" title="Mask/Unmask password to check content">Unmask</button>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <br>
+                <div class="updateaccount">
+                  <div class="form-group">
+                    <button type="submit" id="updatebutton" value="send" class="btn btn-success btn-lg">Update Account</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          {{users}}
+          <p>Welcome {{Firstname}}! Are you a dog or cat person?</p>
+        </div>
+        <div id="dogButton">
+          <form action="/dogdashboard">
+            <div class="form-group">
+              <button type="submit" value="send" class="btn btn-danger">Dogs</button>
+            </div>
+          </form>
+        </div>
+        <p>The button was pressed <span id="dogcounter">0</span> times.</p>
+        <div id="catButton">
+          <form action="/catdashboard">
+            <div class="form-group">
+              <button value="Count" class="btn btn-danger">Cats</button>
+              <p>The button was pressed <span id="catcounter">0</span> times.</p>
+            </div>
+          </form>
+        </div>
       </div>
-    </form>
-  </div>
-  <p>The button was pressed <span id="dogcounter">0</span> times.</p>
-  <div id="catButton">
-    <form action="/catdashboard">
-      <div class="form-group">
-        <button value="Count" class="btn btn-danger">Cats</button>
-        <p>The button was pressed <span id="catcounter">0</span> times.</p>
-      </div>
-    </form>
-  </div>
-</div>

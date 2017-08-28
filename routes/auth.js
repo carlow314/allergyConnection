@@ -28,14 +28,14 @@ module.exports = function (app) {
     }));
 
     //dog facts API
-    request("http://dog-api.kinduff.com/api/facts?number=100", (err, res, body) => {
+    request("http://dog-api.kinduff.com/api/facts?number=5", (err, res, body) => {
         var dogfacts = [];
         if (!err && res.statusCode === 200) {
             // console.log("Here are five random dog facts: " + JSON.parse(body));
             var facts = JSON.parse(body);
             dogfacts.push(facts);
         }
-        //console.log(dogfacts);
+        // console.log(dogfacts);
     });
 
     //random dog image

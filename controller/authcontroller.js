@@ -1,4 +1,5 @@
 var exports = module.exports = {}
+
 exports.signup = function (req, res) {
     var error = req.flash("error");
     console.log(error);
@@ -21,15 +22,17 @@ exports.signin = function (req, res) {
 };
 
 exports.selection = function (req, res) {
-    console.log(req.user);
-    res.render('selection',{
-        Firstname : req.user.Firstname
+    res.render('selection', {
+        Firstname: req.user.Firstname,
+        Lastname: req.user.Lastname,
+        email: req.user.email,
+        password: req.user.password
     });
-}
+};
 
 exports.dogdashboard = function (req, res) {
     res.render('dogdashboard');
-}
+};
 
 exports.catdashboard = function (req, res) {
     res.render('catdashboard');
