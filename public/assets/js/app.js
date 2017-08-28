@@ -52,14 +52,14 @@ $(document).ready(function () {
     // On Click of Dog Button
     $("#dogButton").on("click", function () {
         dogClickCounter++;
-        database.ref().set({
+        database.ref().update({
             dogClickCount: dogClickCounter
         });
     });
     //On click of Cat Button
     $("#catButton").on("click", function () {
         catClickCounter++;
-        database.ref().set({
+        database.ref().update({
             catClickCount: catClickCounter
         });
     });
