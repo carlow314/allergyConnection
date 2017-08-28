@@ -1,3 +1,7 @@
+.navbar {
+	background-color: red;
+}
+
 .panel {
 	position:relative;
 }
@@ -30,6 +34,7 @@ float: right;
 body {
     position: relative;
     overflow-x: hidden;
+
 }
 body,
 html { height: 100%;}
