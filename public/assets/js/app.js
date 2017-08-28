@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    var dogcount = 0;
-    var catcount = 0;
     $("#dogButton").click(function () {
+        var dogcount =0;
         dogcount++;
         $("#dogcounter").text(dogcount);
     });
     $("#catButton").click(function () {
+        var catcount=0;
         catcount++;
         $("#catcounter").text(catcount);
     });
