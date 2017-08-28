@@ -1,34 +1,20 @@
 $(document).ready(function () {
-    $("#dogButton").click(function () {
-        var dogcount =0;
-        dogcount++;
-        $("#dogcounter").text(dogcount);
-    });
-    $("#catButton").click(function () {
-        var catcount=0;
-        catcount++;
-        $("#catcounter").text(catcount);
-    });
-  
     $('.unmask').on('click', function () {
-
         if ($(this).prev('input').attr('type') == 'password')
             changeType($(this).prev('input'), 'text');
-
         else
             changeType($(this).prev('input'), 'password');
-
         return false;
     });
 
     function changeType(x, type) {
         if (x.prop('type') == type)
-            return x; 
+            return x;
         try {
-            return x.prop('type', type); 
+            return x.prop('type', type);
         } catch (e) {
             var html = $("<div>").append(x.clone()).html();
-            var regex = /type=(\")?([^\"\s]+)(\")?/; 
+            var regex = /type=(\")?([^\"\s]+)(\")?/;
             var tmp = $(html.match(regex) == null ?
                 html.replace(">", ' type="' + type + '">') :
                 html.replace(regex, 'type="' + type + '"'));
@@ -44,35 +30,45 @@ $(document).ready(function () {
                 }
             }(events);
             x.replaceWith(tmp);
-            setTimeout(cb, 10); 
+            setTimeout(cb, 10);
             return tmp;
         }
     }
-    document.cookie =
-    'ppkcookie1=testcookie; expires=Wed, 28 Aug 2018 20:47:11 UTC; path=/selection'
-
-    function createCookie(name,value,days) {
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime()+(days*24*60*60*1000));
-            var expires = "; expires="+date.toGMTString();
-        }
-        else var expires = "";
-        document.cookie = name+"="+value+expires+"; path=/";
-    }
-    
-    function readCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        return null;
-    }
-    
-    function eraseCookie(name) {
-        createCookie(name,"",-1);
-    }
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCQHXrwKvEpZptx4tgDCI1aIXxLMCk9xKQ",
+        authDomain: "furbabies-5734e.firebaseapp.com",
+        databaseURL: "https://furbabies-5734e.firebaseio.com",
+        projectId: "furbabies-5734e",
+        storageBucket: "",
+        messagingSenderId: "229679653180"
+    };
+    firebase.initializeApp(config);
+    // database reference variable
+    var database = firebase.database();
+    // Setting initial value of our click counter variable to 0
+    var dogClickCounter = 0;
+    var catClickCounter = 0;
+    // On Click of Dog Button
+    $("#dogButton").on("click", function () {
+        dogClickCounter++;
+        database.ref().set({
+            dogClickCount: dogClickCounter
+        });
+    });
+    //On click of Cat Button
+    $("#catButton").on("click", function () {
+        catClickCounter++;
+        database.ref().set({
+            catClickCount: catClickCounter
+        });
+    });
+    database.ref().on("value", function (snapshot) {
+        $("#dogcounter").html(snapshot.val().dogClickCount);
+        dogClickCounter = snapshot.val().dogClickCount;
+        $("#catcounter").html(snapshot.val().catClickCount);
+        catClickCounter = snapshot.val().catClickCount;
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
 });
