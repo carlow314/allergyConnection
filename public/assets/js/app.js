@@ -34,41 +34,5 @@ $(document).ready(function () {
             return tmp;
         }
     }
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyCQHXrwKvEpZptx4tgDCI1aIXxLMCk9xKQ",
-        authDomain: "furbabies-5734e.firebaseapp.com",
-        databaseURL: "https://furbabies-5734e.firebaseio.com",
-        projectId: "furbabies-5734e",
-        storageBucket: "",
-        messagingSenderId: "229679653180"
-    };
-    firebase.initializeApp(config);
-    // database reference variable
-    var database = firebase.database();
-    // Setting initial value of our click counter variable to 0
-    var dogClickCounter = 0;
-    var catClickCounter = 0;
-    // On Click of Dog Button
-    $("#dogButton").on("click", function () {
-        dogClickCounter++;
-        database.ref().update({
-            dogClickCount: dogClickCounter
-        });
-        //On click of Cat Button
-        $("#catButton").on("click", function () {
-            catClickCounter++;
-            database.ref().update({
-                catClickCount: catClickCounter
-            });
-        });
-        database.ref().on("value", function (snapshot) {
-            $("#dogcounter").html(snapshot.val().dogClickCount);
-            dogClickCounter = snapshot.val().dogClickCount;
-            $("#catcounter").html(snapshot.val().catClickCount);
-            catClickCounter = snapshot.val().catClickCount;
-        }, function (errorObject) {
-            console.log("The read failed: " + errorObject.code);
-        });
-    });
+
 });
