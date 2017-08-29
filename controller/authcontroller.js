@@ -27,13 +27,18 @@ exports.signin = function (req, res) {
 };
 
 exports.selection = function (req, res) {
-
+  fire.getClickCountForAnimal('dog').then(response => {
+    let dogCount = response.dogClickCount;
+    let catCount = response.catClickCount;
     res.render('selection', {
-        Firstname: 'req.user.Firstname',
-        Lastname: 'req.user.Lastname',
-        email: 'req.user.email',
-        password: 'req.user.password'
+      Firstname: 'req.user.Firstname',
+      Lastname: 'req.user.Lastname',
+      email: 'req.user.email',
+      password: 'req.user.password',
+      dogCount: dogCount,
+      catCount: catCount,
     });
+  })
 };
 
 exports.dogdashboard = function (req, res) {

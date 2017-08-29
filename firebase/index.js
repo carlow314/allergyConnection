@@ -39,7 +39,7 @@ module.exports = {
                   .then((snapshot) => {
                     console.log(' WHAT IS THE SNAPSHOT', snapshot.val().dogClickCount);
 
-                    clickCount = snapshot.val().dogClickCount;
+                    clickCount = snapshot.val();
                   })
       : await catClickRef.once('value')
                    .then(snapshot => {
