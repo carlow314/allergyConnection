@@ -26,8 +26,6 @@
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.1",
-    "sequelize": "^4.6.0",
-    "vue": "^2.4.2"
     "node-gyp": "^3.6.2",
     "nodejs": "0.0.0",
     "passport": "^0.4.0",
