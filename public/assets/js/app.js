@@ -55,20 +55,20 @@ $(document).ready(function () {
         database.ref().update({
             dogClickCount: dogClickCounter
         });
-    });
-    //On click of Cat Button
-    $("#catButton").on("click", function () {
-        catClickCounter++;
-        database.ref().update({
-            catClickCount: catClickCounter
+        //On click of Cat Button
+        $("#catButton").on("click", function () {
+            catClickCounter++;
+            database.ref().update({
+                catClickCount: catClickCounter
+            });
         });
-    });
-    database.ref().on("value", function (snapshot) {
-        $("#dogcounter").html(snapshot.val().dogClickCount);
-        dogClickCounter = snapshot.val().dogClickCount;
-        $("#catcounter").html(snapshot.val().catClickCount);
-        catClickCounter = snapshot.val().catClickCount;
-    }, function (errorObject) {
-        console.log("The read failed: " + errorObject.code);
+        database.ref().on("value", function (snapshot) {
+            $("#dogcounter").html(snapshot.val().dogClickCount);
+            dogClickCounter = snapshot.val().dogClickCount;
+            $("#catcounter").html(snapshot.val().catClickCount);
+            catClickCounter = snapshot.val().catClickCount;
+        }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+        });
     });
 });

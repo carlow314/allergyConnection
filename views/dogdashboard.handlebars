@@ -1,17 +1,33 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-2 pull-right">
-            <div id="logout_button">
-                <form action="/logout">
-                    <div class="form-group">
-                        <button type="submit" value="send" class="btn btn-danger">Log Out</button>
-                    </div>
-                </form>
+        {{#each dogFacts}}
+        <p>{{this}}</p>
+        {{/each}}
+        <img src="{{puppyUrl}}" alt="A cute puppy">
+        <img src="{{dogImage}}" alt="A cute dog">
+        <div class="row">
+            <div class="col-lg-2 pull-right">
+                <div id="logout_button">
+                    <form action="/logout">
+                        <div class="form-group">
+                            <button type="submit" value="send" class="btn btn-danger">Log Out</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <iframe width="375" height="435" src="https://www.razoo.com/embed/1vd4kf?embed=widget" scrolling="no" marginHeight="0" marginWidth="0"
-        frameBorder="0"></iframe>
-    <iframe width="150" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="0" src="https://searchtools.adoptapet.com/public/searchtools/display/150x240"></iframe>
-    <div style="height: 29px; width: 150px; text-align:right;"><span style="font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9px; color: rgb(102, 102, 102);">Pet adoption and rescue powered by <a href="https://www.adoptapet.com/" title="Pet adoption and rescue powered by Adopt-a-Pet.com" style="color: rgb(0,186,220);">Adopt-a-Pet.com</a></span></div>
+        <div class="row">
+            <div class="col-lg-2">
+                <iframe width="375" height="435" src="https://www.razoo.com/embed/1vd4kf?embed=widget" scrolling="no" marginHeight="0" marginWidth="0"
+                    frameBorder="0"></iframe>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <iframe width="150" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="0" src="https://searchtools.adoptapet.com/public/searchtools/display/150x240">
+                </iframe>
+            </div>
+        </div>
+        <div id="dogfacts"></div>
+
+    </div>

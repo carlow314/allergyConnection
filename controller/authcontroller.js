@@ -1,13 +1,16 @@
+var request = require("request");
 var exports = module.exports = {}
 
 exports.signup = function (req, res) {
     var error = req.flash("error");
     console.log(error);
+
     res.render('signup', {
         error: error,
         title: "furbabies!",
     });
 };
+
 
 
 exports.signin = function (req, res) {
@@ -31,11 +34,42 @@ exports.selection = function (req, res) {
 };
 
 exports.dogdashboard = function (req, res) {
-    res.render('dogdashboard');
+    request("http://dog-api.kinduff.com/api/facts?number=5", (err, dogRequest, body) => {
+        var dogfacts;
+        if (!err && dogRequest.statusCode === 200) {
+            var facts = JSON.parse(body).facts;
+            dogfacts = facts;
+        }
+        request("https://dog.ceo/api/breeds/image/random", (err, dogPictureRequest, body) => {
+            if (!err && res.statusCode === 200) {
+                var image = JSON.parse(body);
+                var currentimage = image.message;
+                console.log(currentimage);
+
+            }
+            const RandomPuppy = require('random-puppy');
+            RandomPuppy()
+                .then(url => {
+                    res.render('dogdashboard', {
+                        puppyUrl: url,
+                        dogFacts: dogfacts,
+                        dogImage: currentimage
+                    });
+                })
+        });
+    });
 };
 
 exports.catdashboard = function (req, res) {
-    res.render('catdashboard');
+    request("https://catfact.ninja/fact", function (error, catRequest, body) {
+        if (!error && res.statusCode === 200) {
+            var CatFact = JSON.parse(body).fact;
+
+        }
+        res.render('catdashboard', {
+            catFact: CatFact
+        })
+    });
 }
 
 exports.logout = function (req, res) {
