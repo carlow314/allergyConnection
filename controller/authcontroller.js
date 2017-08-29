@@ -31,10 +31,10 @@ exports.selection = function (req, res) {
     let dogCount = response.dogClickCount;
     let catCount = response.catClickCount;
     res.render('selection', {
-      Firstname: 'req.user.Firstname',
-      Lastname: 'req.user.Lastname',
-      email: 'req.user.email',
-      password: 'req.user.password',
+      Firstname: req.user.Firstname,
+      Lastname: req.user.Lastname,
+      email: req.user.email,
+      password: req.user.password,
       dogCount: dogCount,
       catCount: catCount,
     });
