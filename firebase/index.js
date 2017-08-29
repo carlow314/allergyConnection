@@ -19,34 +19,35 @@ module.exports = {
   async incrementClickCount(animal) {
 
     try {
-      await dogClickRef.once('value')
-                              .then(snapshot => {
+      animal === 'dog'?
+        await dogClickRef.once('value')
+                          .then(snapshot => {
                                 const { dogClickCount } = snapshot.val();
-
+                                console.log( 'DOGGGGGG', dogClickCount);
                                 dogClickRef.update({ dogClickCount: dogClickCount + 1} )
                               })
+      : await catClickRef.once('value')
+                         .then(snapshot => {
+                           const { catClickCount } = snapshot.val();
+                           console.log("cat clickkkkk", catClickCount);
+                           catClickRef.update({ catClickCount: catClickCount + 1});
+                         })
     } catch (e) {
 
     } finally {
 
     }
   },
-  async getClickCountForAnimal(animal) {
+  async getClickCountForAnimal() {
     let clickCount;
     try {
-      animal === 'dog' ?
+
          await dogClickRef.once('value')
                   .then((snapshot) => {
                     console.log(' WHAT IS THE SNAPSHOT', snapshot.val().dogClickCount);
 
                     clickCount = snapshot.val();
                   })
-      : await catClickRef.once('value')
-                   .then(snapshot => {
-                     clickCount = snapshot.val();
-                     console.log(' WHAT IS THE CAT SNAP', snapshot);
-                   })
-
     } catch (e) {
       // probably could use some real error handling but ill leave that up to you :)
       return e;

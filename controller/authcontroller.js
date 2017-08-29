@@ -27,9 +27,10 @@ exports.signin = function (req, res) {
 };
 
 exports.selection = function (req, res) {
-  fire.getClickCountForAnimal('dog').then(response => {
+  fire.getClickCountForAnimal().then(response => {
     let dogCount = response.dogClickCount;
     let catCount = response.catClickCount;
+    console.log(' WHAT IS THE COUNT', dogCount, catCount);
     res.render('selection', {
       Firstname: 'req.user.Firstname',
       Lastname: 'req.user.Lastname',
@@ -44,7 +45,7 @@ exports.selection = function (req, res) {
 exports.dogdashboard = function (req, res) {
     let animalCount;
 
-      fire.getClickCountForAnimal('dog').then(response => {
+      fire.incrementClickCount('dog').then(response => {
         animalCount = response;
       })
 
@@ -77,7 +78,7 @@ exports.dogdashboard = function (req, res) {
 
 exports.catdashboard = function (req, res) {
   let animalCount;
-  fire.getClickCountForAnimal('cat').then(response => {
+  fire.incrementClickCount('cat').then(response => {
     animalCount = response;
   })
     request("https://catfact.ninja/fact", function (error, catRequest, body) {
