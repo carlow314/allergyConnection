@@ -26,6 +26,7 @@
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.5",
+    "firebase": "^4.3.0",
     "instafeed.js": "^1.4.1",
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",

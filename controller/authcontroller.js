@@ -25,6 +25,7 @@ exports.signin = function (req, res) {
 };
 
 exports.selection = function (req, res) {
+    
     res.render('selection', {
         Firstname: req.user.Firstname,
         Lastname: req.user.Lastname,
