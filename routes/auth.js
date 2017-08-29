@@ -1,12 +1,14 @@
 var passport = require("passport");
 var request = require("request");
 
+
 var authController = require('../controller/authcontroller.js');
 module.exports = function (app) {
     app.get('/', authController.signup);
     app.get('/signin', authController.signin);
     app.get('/selection', isLoggedIn, authController.selection);
-    app.get('/dashboard', authController.dashboard);
+    app.get('/dogdashboard', authController.dogdashboard);
+    app.get('/catdashboard', authController.catdashboard);
     app.get('/logout', authController.logout);
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/selection',
@@ -26,14 +28,14 @@ module.exports = function (app) {
     }));
 
     //dog facts API
-    request("http://dog-api.kinduff.com/api/facts?number=100", (err, res, body) => {
+    request("http://dog-api.kinduff.com/api/facts?number=5", (err, res, body) => {
         var dogfacts = [];
         if (!err && res.statusCode === 200) {
             // console.log("Here are five random dog facts: " + JSON.parse(body));
             var facts = JSON.parse(body);
             dogfacts.push(facts);
         }
-        //console.log(dogfacts);
+        // console.log(dogfacts);
     });
 
     //random dog image
