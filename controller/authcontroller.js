@@ -1,4 +1,6 @@
 var request = require("request");
+const fire = require('../firebase/index');
+console.log(' WHAT IS THE CLICK COUNTER', fire);
 var exports = module.exports = {}
 
 exports.signup = function (req, res) {
@@ -25,16 +27,27 @@ exports.signin = function (req, res) {
 };
 
 exports.selection = function (req, res) {
-    
+  fire.getClickCountForAnimal().then(response => {
+    let dogCount = response.dogClickCount;
+    let catCount = response.catClickCount;
     res.render('selection', {
-        Firstname: req.user.Firstname,
-        Lastname: req.user.Lastname,
-        email: req.user.email,
-        password: req.user.password
+      Firstname: 'req.user.Firstname',
+      Lastname: 'req.user.Lastname',
+      email: 'req.user.email',
+      password: 'req.user.password',
+      dogCount: dogCount,
+      catCount: catCount,
     });
+  })
 };
 
 exports.dogdashboard = function (req, res) {
+    let animalCount;
+
+      fire.incrementClickCount('dog').then(response => {
+        animalCount = response;
+      })
+
     request("http://dog-api.kinduff.com/api/facts?number=5", (err, dogRequest, body) => {
         var dogfacts;
         if (!err && dogRequest.statusCode === 200) {
@@ -54,7 +67,8 @@ exports.dogdashboard = function (req, res) {
                     res.render('dogdashboard', {
                         puppyUrl: url,
                         dogFacts: dogfacts,
-                        dogImage: currentimage
+                        dogImage: currentimage,
+                        dogCount: animalCount
                     });
                 })
         });
@@ -62,13 +76,18 @@ exports.dogdashboard = function (req, res) {
 };
 
 exports.catdashboard = function (req, res) {
+  let animalCount;
+  fire.incrementClickCount('cat').then(response => {
+    animalCount = response;
+  })
     request("https://catfact.ninja/fact", function (error, catRequest, body) {
         if (!error && res.statusCode === 200) {
             var CatFact = JSON.parse(body).fact;
 
         }
         res.render('catdashboard', {
-            catFact: CatFact
+            catFact: CatFact,
+            catCount: animalCount,
         })
     });
 }
