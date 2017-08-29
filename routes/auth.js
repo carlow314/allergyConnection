@@ -5,7 +5,7 @@ var authController = require('../controller/authcontroller.js');
 module.exports = function (app) {
     app.get('/', authController.signup);
     app.get('/signin', authController.signin);
-    app.get('/selection',  authController.selection);
+    app.get('/selection', isLoggedIn, authController.selection);
     app.get('/dogdashboard', authController.dogdashboard);
     app.get('/catdashboard', authController.catdashboard);
     app.get('/logout', authController.logout);

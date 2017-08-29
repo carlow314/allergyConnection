@@ -30,7 +30,6 @@ exports.selection = function (req, res) {
   fire.getClickCountForAnimal().then(response => {
     let dogCount = response.dogClickCount;
     let catCount = response.catClickCount;
-    console.log(' WHAT IS THE COUNT', dogCount, catCount);
     res.render('selection', {
       Firstname: 'req.user.Firstname',
       Lastname: 'req.user.Lastname',
