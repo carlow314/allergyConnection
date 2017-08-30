@@ -1,52 +1,45 @@
-{{> nav}}
 <div class="container-fluid">
   <header class="main-header">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 mx-auto">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-   Log-in
-  </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-          <form data-toggle="validator" role="form" name="signin" action="/signin" method="POST" id="signin">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>Email Address</label>
-                <input class="form-control" id="email_signin" type="email" name="email" placeholder="" required required-message="Please enter your email address.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>Password</label>
-                <input class="form-control" id="password_signin" type="password" name="password" placeholder="" required required-message="Please enter a valid password.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <br>
-            <div id="success"></div>
-            <div class="form-group">
-              <button id="signinSubmit" type="submit" value="send" class="btn btn-success btn-lg">Log-in</button>
-            </div>
-            <div id="cancel"></div>
-            <div class="form-group">
-              <input class="btn btn-success" type="reset" value="Cancel">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <form data-toggle="validator" role="form" name="signup" action="/signup" method="POST" id="signup">
+    <img class="furbaby-logo" src="assets/images/logo.png" alt="Our logo">
+    <!-- <h1 id="page-title">Furbabies</h1> -->
+    <a id="signinButton" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img  class="login-button" src="assets/images/login.png" alt="Login Button"></a>
+    <div class="dropdown-menu form-login stop-propagation" role="menu">
+      <form data-toggle="validator collapse" role="form" name="signin" action="/signin" method="POST" id="signin">
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
+            <label>Email Address</label>
+            <input class="form-control" id="email_signin" type="email" name="email" placeholder="" required required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Password</label>
+            <input class="form-control" id="password_signin" type="password" name="password" placeholder="" required required-message="Please enter a valid password.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+          <div class="form-group">
+            <button id="signinsubmit" type="submit" value="send" class="center-block btn btn-success">Send</button>
+            <br>
+            <input id="cancelsignin" class=" center-block btn btn-success" type="reset" value="Cancel">
+          </div>
+        </div>
+    </form>
+</div>
+</div>
+
+</header>
+<br>
+<div class="col-lg-6 col-lg-offset-3">
+<div class="main-body-wrapper">
+  <div class="row">
+    <div class=" col-lg-8 col-lg-offset-2">
+      <form data-toggle="validator" role="form" name="signup" action="/signup" method="POST" id="signup">
+        <div class="control-group">
+          <div class=" form-group floating-label-form-group controls">
             <label>First Name</label>
-            <input class="form-control" id="firstName" type="text" name="Firstname" placeholder="" data-validation-required-message="Please enter your first name."
+            <input class=" center-block form-control" id="firstName" type="text" name="Firstname" placeholder="" data-validation-required-message="Please enter your first name."
               required>
             <p class="help-block text-danger"></p>
           </div>
@@ -70,19 +63,16 @@
           <div class="form-group floating-label-form-group controls">
             <label>Password</label>
             <input class="form-control" id="password" type="password" name="password" placeholder="" required data-validation-required-message="Please enter a valid password.">
-            <button class="unmask" type="button" title="Mask/Unmask password to check content">Unmask</button>
+             <button class="unmask" type="button" title="Mask/Unmask password to check content"> <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></button>
             <p class="help-block text-danger"></p>
           </div>
         </div>
-        <br>
-        <div class="accountCreation">
-          <div class="form-group">
-            <button type="submit" id="createButton" value="send" class="btn btn-success btn-lg">Create Account</button>
-          </div>
+        <div class="form-group">
+          <button type="submit" id="createButton" value="send" class="center-block btn btn-success btn-lg">Create Account</button>
         </div>
-        <div id="cancel">
+         <div id="cancel">
           <div class="form-group">
-            <input class="btn btn-success" type="reset" value="Cancel">
+            <input class="center-block btn btn-success btn-lg" type="reset" value="Cancel">
           </div>
         </div>
       </form>
@@ -91,4 +81,5 @@
   <!-- <h3 class="error">{{error}}</h3> -->
 </div>
 </div>
-{{> footer}}
+</div>
+</div>
