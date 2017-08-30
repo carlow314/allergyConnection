@@ -3,6 +3,12 @@
     height: 250px;
 }
 
+#welcome{
+width: 50%;
+background-color: white;
+margin-top: 50px;
+}
+
 .furbaby-logo {
     width: 65%;
     margin: auto;
@@ -92,7 +98,9 @@
     border-color: #5e0f53;
 }
 
-
+#dogbutton{
+    background:rgba(249, 249, 249, 0);
+}
 
 /*.col-lg-8 mx-auto {
 	padding: 30px;
@@ -133,7 +141,6 @@
 }
 
 body {
-    position: relative;
     overflow-x: hidden;
     background-image: url("../images/background.png");
     background-size: cover;
