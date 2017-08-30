@@ -1,33 +1,56 @@
-<div class="container">
-    <div class="row">
-        {{#each dogFacts}}
-        <p>{{this}}</p>
-        {{/each}}
-        <img src="{{puppyUrl}}" alt="A cute puppy">
-        <img src="{{dogImage}}" alt="A cute dog">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body class="dogs-bg">
+    <div class="container-fluid dogcontainer">
+        <header class="main-header">
+            <img class="furbaby-logo" src="assets/images/logo.png" alt="Our logo">
+        </header>
         <div class="row">
-            <div class="col-lg-2 pull-right">
-                <div id="logout_button">
-                    <form action="/logout">
-                        <div class="form-group">
-                            <button type="submit" value="send" class="btn btn-danger">Log Out</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="col-12 banner">
+                <img class="center-block banner-image" src="assets/images/dogs-button.png" alt="Cats Logo">
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-2">
-                <iframe width="375" height="435" src="https://www.razoo.com/embed/1vd4kf?embed=widget" scrolling="no" marginHeight="0" marginWidth="0"
-                    frameBorder="0"></iframe>
-            </div>
+        <br>
+        <br>
+        <div class="col-lg-6 col-lg-offset-1 well dogfacts">
+            <h2 class="text-center">Awesome facts about dogs!!!</h2>
+            {{#each dogFacts}}
+            <li class="text-align">{{this}}</li>
+            {{/each}}
         </div>
         <div class="row">
-            <div class="col-lg-2">
-                <iframe width="150" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="0" src="https://searchtools.adoptapet.com/public/searchtools/display/150x240">
-                </iframe>
+            <div class="col-4 sidebar">
+                <img class="image-sidebar" src="assets/images/sidebar.png" alt="sidebar">
+            </div>
+            <br>
+            <img id="dogpic"src="{{puppyUrl}}" height="400" width="400" alt="A cute puppy">
+            <br>
+            <br>
+            <br>
+            <img id="dogpic"src="{{dogImage}}" height="400" width="400" alt="A cute dog">
+        </div>
+        <div class="widget-box">
+            <iframe width="275" height="400" src="https://www.razoo.com/embed/1vd4kf?embed=widget" scrolling="no" marginHeight="0" marginWidth="0"
+                frameBorder="0"></iframe>
+            <div class="widget-pos">
+                <iframe width="150" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="0" src="https://searchtools.adoptapet.com/public/searchtools/display/150x240"></iframe>
+                <div style="height: 29px; width: 150px; text-align:right;"><span style="font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9px; color: rgb(102, 102, 102);">Pet adoption and rescue powered by <a href="https://www.adoptapet.com/" title="Pet adoption and rescue powered by Adopt-a-Pet.com" style="color: rgb(0,186,220);">Adopt-a-Pet.com</a></span></div>
             </div>
         </div>
-        <div id="dogfacts"></div>
-
+        <div class="adoptme pull-right">
+            <SCRIPT src="https://fpm.petfinder.com/js/fpmstyle.js"></SCRIPT>
+            <SCRIPT src="https://fpm.petfinder.com/fp/petfeed.cgi?lang=json&callback=fpm2&state=CO&shelter=&animal=Dog&age=&ref=123123412asdgfasdfg234qlgkhj1p928y4"></SCRIPT>
+        </div>
+        <div class="col-lg-2 pull-right">
+            <div id="logout_button" class="lout-btn">
+                <form action="/logout">
+                    <div class="form-group">
+                        <button id="logoutbutton" type="submit" value="send" class="btn btn-danger">Log Out</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+</body>

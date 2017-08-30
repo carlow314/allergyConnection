@@ -25,10 +25,9 @@ margin-top: 50px;
 
 .lout-btn {
     position: relative;
-    bottom: 290px;
-    right: -350px;
+    right: -450px;
     z-index: 20;
-    top:-1655px;
+    top:-1500px;
 }
 
 .banner {
@@ -54,7 +53,7 @@ margin-top: 50px;
     float: right;
     right: 25px;
     z-index: 1000;
-    top:-1250px;
+    top:-1350px;
 
 }
 
@@ -67,9 +66,14 @@ margin-top: 50px;
 .adoptme{
     position: relative;
     right:-180px;
-    top:-820px;
+    top:-920px;
     z-index: 1000;
 }
+
+   .dogfacts{
+       background-color: white;
+   } 
+
 #page-title {
     font-family: 'Kaushan Script', cursive;
     font-size: 56px;
@@ -176,6 +180,9 @@ html {
     height: 75%;
 }
 
+#dogpic{
+    margin-left: 300px;
+}
 .nav .open>a,
 .nav .open>a:hover,
 .nav .open>a:focus {
@@ -183,7 +190,7 @@ html {
 }
 
 .catfacts{
-    top:-500px;
+    top:-300px;
     left: 150px;
 }
 
@@ -544,4 +551,8 @@ html {
 #sticky-footer-container p {
     color: #fff;
     padding: 20px;
+}
+
+.dogcontainer{
+    height:1600px;
 }
