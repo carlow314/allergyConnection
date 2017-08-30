@@ -438,3 +438,14 @@ html { height: 100%;}
     background-color: rgba(250,250,250,.8);
     z-index: 1;
 }
+
+#sticky-footer-container{
+	background-color: grey;
+	height: 80px;
+	width: 100%;
+	display: inline-flex;
+}
+#sticky-footer-container p {
+	color: #fff;
+	padding: 20px;
+}
