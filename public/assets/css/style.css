@@ -556,3 +556,7 @@ html {
 .dogcontainer{
     height:1600px;
 }
+
+.error{
+    color: red;
+}
