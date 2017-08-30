@@ -26,8 +26,9 @@ margin-top: 50px;
 .lout-btn {
     position: relative;
     bottom: 290px;
-    right: -184px;
+    right: -350px;
     z-index: 20;
+    top:-1655px;
 }
 
 .banner {
@@ -45,23 +46,30 @@ margin-top: 50px;
 .pet-img {
     width: 400px;
     margin: 14px 200px 0 200px;
+    right: -150px;
 }
 
 .widget-box {
-    width: 200px;
-    height: auto;
     position: relative;
     float: right;
-    right: 175px;
-    bottom: 1035px;
+    right: 25px;
     z-index: 1000;
+    top:-1250px;
+
 }
 
 .widget-pos {
     position: relative;
-    right: -226px;
+    right: -70px;
+    margin-top: 350px;
 }
 
+.adoptme{
+    position: relative;
+    right:-180px;
+    top:-820px;
+    z-index: 1000;
+}
 #page-title {
     font-family: 'Kaushan Script', cursive;
     font-size: 56px;
@@ -97,6 +105,7 @@ margin-top: 50px;
     background-color: #ffffff;
     border-color: #5e0f53;
 }
+
 
 #dogbutton{
     background:rgba(249, 249, 249, 0);
@@ -140,6 +149,9 @@ margin-top: 50px;
     float: right;
 }
 
+#catcontainer{
+    height:1800px;
+}
 body {
     overflow-x: hidden;
     background-image: url("../images/background.png");
@@ -148,21 +160,20 @@ body {
 
 .cats-bg {
     position: relative;
-    overflow-x: hidden;
     background-image: url("../images/cat-final.png");
-    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .dogs-bg {
     position: relative;
     overflow-x: hidden;
     background-image: url("../images/dog-final.png");
-    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body,
 html {
-    height: 100%;
+    height: 75%;
 }
 
 .nav .open>a,
@@ -171,6 +182,10 @@ html {
     background-color: transparent;
 }
 
+.catfacts{
+    top:-500px;
+    left: 150px;
+}
 
 /*-------------------------------*/
 
@@ -244,7 +259,7 @@ html {
     float: right;
     clear: right;
     right: -18px;
-    top: -91px;
+    top: -110px;
     z-index: 1;
     width: 460%;
 }
