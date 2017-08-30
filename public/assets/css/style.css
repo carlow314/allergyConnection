@@ -3,7 +3,7 @@
 }
 
 .furbaby-logo {
-	width: 100%;
+	width: 75%;
 	margin: auto;
 	display: block;
 }
@@ -363,4 +363,15 @@ html { height: 100%;}
     bottom: 0;
     background-color: rgba(250,250,250,.8);
     z-index: 1;
+}
+
+#sticky-footer-container{
+	background-color: grey;
+	height: 80px;
+	width: 100%;
+	display: inline-flex;
+}
+#sticky-footer-container p {
+	color: #fff;
+	padding: 20px;
 }

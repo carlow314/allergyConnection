@@ -21,7 +21,7 @@ exports.signin = function (req, res) {
     console.log(passwordError);
     console.log(emailError);
     res.render('signup', {
-        error: error
+        error: emailError
     });
 
 };
