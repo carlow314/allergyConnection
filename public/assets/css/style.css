@@ -6,6 +6,53 @@
 	width: 75%;
 	margin: auto;
 	display: block;
+	position: relative;
+}
+
+.login-button {
+	height: 25%;
+	position: relative;
+	left: 40px;
+  top: 95px;
+}
+
+.lout-btn {
+	position: relative;
+  bottom: 290px;
+  right: -184px;
+  z-index: 20;
+}
+
+.banner {
+	background-color: #ffffff;
+  max-height: 110px;
+  position: absolute;
+  left: 25px;
+  top: 102px;
+}
+
+.banner-image {
+	max-height: inherit;
+}
+
+.pet-img {
+	width: 400px;
+  margin: 14px 200px 0 200px;
+}
+
+.widget-box {
+	width: 200px;
+  height: auto;
+  position: relative;
+  float: right;
+  right: 175px;
+  bottom: 1035px;
+  z-index: 1000;
+}
+
+.widget-pos {
+	position: relative;
+	right: -226px;
 }
 
 #page-title {
@@ -67,10 +114,24 @@ float: right;
 body {
     position: relative;
     overflow-x: hidden;
-		background-image: url("https://designhat.files.wordpress.com/2015/03/pastel-rainbow-gradient-iphone-6-wallpaper.png?w=1200");
+		background-image: url("../images/background.png");
 		background-size: cover;
-
 }
+
+.cats-bg {
+	position: relative;
+	overflow-x: hidden;
+	background-image: url("../images/cat-final.png");
+	background-size: cover;
+}
+
+.dogs-bg {
+	position: relative;
+	overflow-x: hidden;
+	background-image: url("../images/dog-final.png");
+	background-size: cover;
+}
+
 body,
 html { height: 100%;}
 .nav .open > a,
@@ -129,6 +190,19 @@ html { height: 100%;}
 /*-------------------------------*/
 /*     Sidebar nav styles        */
 /*-------------------------------*/
+.sidebar {
+		float: right;
+		width: 10%;
+}
+.image-sidebar {
+	position: relative;
+	float: right;
+	clear: right;
+	right: -18px;
+	top: -91px;
+	z-index: 1;
+	width: 460%;
+}
 
 .sidebar-nav {
     position: absolute;
