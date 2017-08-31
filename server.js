@@ -7,9 +7,7 @@ var path = require("path");
 var env = require("dotenv").load();
 var flash = require('connect-flash');
 cookieParser = require('cookie-parser');
-require("babel-core").transform("code", {
-  plugins: ["transform-async-to-generator"]
-});
+
 // Sets up the Express App;
 var PORT = process.env.PORT || 8000;
 var app = express()

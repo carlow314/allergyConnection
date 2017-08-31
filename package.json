@@ -4,7 +4,8 @@
   "description": "A Fullstack application that will give you local air quality and pollen levels, as well as user experience as well.",
   "main": "server.js",
   "engines": {
-    "node": "8.1.3"},
+    "node": "8.1.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp sass:watch & node server.js"
