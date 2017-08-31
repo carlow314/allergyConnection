@@ -14,7 +14,7 @@ const database = fire.database();
 const dogClickRef = database.ref();
 const catClickRef = database.ref();
 
-// because you like async so much i figured id give it a whirl :)
+
 module.exports = {
   async incrementClickCount(animal) {
 
@@ -49,7 +49,7 @@ module.exports = {
                     clickCount = snapshot.val();
                   })
     } catch (e) {
-      // probably could use some real error handling but ill leave that up to you :)
+     
       return e;
     }
     return clickCount
